@@ -143,7 +143,6 @@ const CharacterAnimation = ({ phase = 'genesis', position = 'right' }) => {
   const avatarDataUrl = useMemo(() => {
     return `data:image/svg+xml;utf8,${encodeURIComponent(avatarSvg)}`;
   }, [avatarSvg]);
-  const isRight = position === 'right';
 
   return (
     <motion.div
