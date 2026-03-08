@@ -183,40 +183,13 @@ const CharacterAnimation = ({ phase = 'genesis', position = 'right' }) => {
           }}
         >
           <img
-            src={currentChar.image}
+            src={avatarDataUrl}
             alt={currentChar.alt}
             className="w-full h-full object-contain drop-shadow-2xl"
             style={{
               filter: `drop-shadow(0 0 30px ${currentChar.glow})`,
             }}
-            onError={(e) => {
-              // Fallback to a gradient placeholder if image fails to load
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'flex';
-            }}
           />
-          
-          {/* Fallback Gradient Character */}
-          <div 
-            className="w-full h-full hidden items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500"
-            style={{
-              boxShadow: `0 0 50px ${currentChar.glow}`,
-            }}
-          >
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-              className="text-9xl"
-            >
-              {currentChar.emoji}
-            </motion.div>
-          </div>
         </motion.div>
 
         {/* Emoji Badge */}
